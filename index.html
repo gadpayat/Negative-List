@@ -170,25 +170,7 @@ footer{
 </footer>
 
 <script>
-const annex10 = `ANNEX 10: ENVIRONMENTAL AND SOCIAL EXCLUSION LIST
-
-The following are ineligible sub-project activities and/or expenditure types:
-● Any development project or activity in strict protection zone (SPZ) of a protected area
-● Projects classified as “environmentally critical projects” or category A based on PEISS screening
-● Environmentally hazardous materials such as chainsaws, explosives, pesticides, herbicides, insecticides, asbestos and other potentially dangerous materials
-● Construction of any new dams or rehabilitation of existing dams including structural or operational changes
-● Any activity affecting physical cultural heritage such as graves, temples, churches, historical relics, archaeological sites
-● Activities involving forced labor, child labor exploitation, or human trafficking
-● Activities that unfairly exploit women or men at any age
-● Any activity on land with disputed ownership or tenure rights
-● Stand-alone solar-powered street lights
-● Construction in or adjacent to sacred, cultural, heritage, or ICC/IP areas
-
-END OF ANNEX 10`;
-
-const annex11 = `ANNEX 11: NEGATIVE LIST
-
-ACTIVITIES, EXPENDITURES, AND SUB-PROJECTS INCLUDED IN THE NEGATIVE LIST ARE THOSE THAT POSE NEGATIVE ENVIRONMENTAL AND/OR SOCIAL IMPACTS AND ARE THEREFORE INELIGIBLE FOR FUNDING UNDER THE KALAHI-CIDSS PROJECT.
+const text = `ACTIVITIES, EXPENDITURES, AND SUB-PROJECTS INCLUDED IN THE NEGATIVE LIST ARE THOSE THAT POSE NEGATIVE ENVIRONMENTAL AND/OR SOCIAL IMPACTS AND ARE THEREFORE INELIGIBLE FOR FUNDING UNDER THE KALAHI-CIDSS PROJECT.
 
 ═══════════════════════════════════════════════
 PROHIBITED ACTIVITIES
@@ -196,60 +178,71 @@ PROHIBITED ACTIVITIES
 
 a) Activities that can cause any significant loss or degradation of critical natural habitats whether directly or indirectly;
 b) Activities that could adversely affect forest and forest health;
-c) Activities that could affect sites with archaeological, historical, religious, or unique natural values;
-d) Use of goods and equipment on disputed lands;
-e) Demolition without verified ownership consent;
+c) Activities that could affect sites with archaeological, paleontological, historical, religious, or unique natural values;
+d) Use of goods and equipment on lands abandoned due to social tension/conflict, or the ownership of the land is disputed or cannot be ascertained;
+e) Use of goods and equipment to demolish or remove assets unless ownership can be ascertained and owners have concurred;
 f) Purchase or compensation for land;
-g) Activities affecting Indigenous Peoples’ resources;
-h) Government office construction (except evacuation centers);
-i) Non-climate resilient retrofitting exceptions only;
-j) Places of worship construction;
-k) Hazardous materials use;
-l) Over-limit fishing boats;
-m) Double-funded activities;
-n) Fiesta/cultural events;
+g) Activities resulting in adverse impacts on land and natural resources customarily used by Indigenous Peoples (IPs);
+h) Construction, improvement, rehabilitation, or repair of government offices and facilities except existing evacuation centers;
+i) Retrofitting of basic social services infrastructure except for climate resilience improvements;
+j) Construction, improvement, rehabilitation, or repair of places of worship and halls;
+k) Environmentally hazardous materials such as chainsaws, explosives, pesticides, herbicides, insecticides, asbestos, and other dangerous materials;
+l) Fishing boats beyond BFAR weight limits;
+m) Activities with alternative prior sources of committed funding;
+n) Fiesta and other religious or cultural activities;
 o) International travel;
-p) Child labor or harmful labor practices;
-q) Relief consumables;
-r) Maintenance of funded infrastructure unless disaster-related;
-s) Illegal goods or trade;
-t) Weapons and munitions;
-u) Logging in primary forests;
-v) Harmful marine practices.
+p) Activities employing children below 18 years old or involving harmful labor practices;
+q) Consumption items including food and basic necessities commonly included in relief packages;
+r) Maintenance and operation of infrastructure funded by KALAHI-CIDSS unless damaged by disaster;
+s) Production or trade of products deemed illegal under Philippine laws or international agreements;
+t) Production or trade in weapons and munitions including paramilitary materials;
+u) Commercial logging operations or purchase of logging equipment for primary tropical forests;
+v) Harmful marine and coastal fishing practices that damage biodiversity and habitats.
 
-END OF ANNEX 11`;
+═══════════════════════════════════════════════
+PROHIBITED INFRASTRUCTURES AND EXPENDITURES
+═══════════════════════════════════════════════
 
-let currentText = annex11;
+a) Projects located in excluded areas under NCIP AO 3 Series of 2021 including:
+• Sacred grounds and burial sites of Indigenous Communities
+• International and local cultural heritage sites
+• Critical areas reserved by ICCs/IPs
+• Areas identified in ADSDPP
+b) Construction adjacent to cultural and heritage sites;
+c) Construction adjacent to critical ICC/IP areas;
+d) Communal and irrigation systems under National Irrigation Authority jurisdiction;
+e) Regulatory services including laboratories and laboratory equipment;
+f) Large production, post-harvest, and processing facilities;
+g) Large market-related infrastructures;
+h) Training centers including equipment;
+i) Multiple livestock types in one sub-project;
+j) Rehabilitation of fishponds without required buffer zones;
+k) Brackish water projects not observing required ecological buffer zones;
+l) Freshwater projects not observing required environmental setbacks;
+m) Advertisements, donations, promotional campaigns, and marketing strategies covered by Executive Order No. 51;
+n) Purchase of vehicles including ambulances, police cars, fire trucks, and rescue vehicles;
+o) Solar-powered street lights;
+p) Small water impounding projects similar to Project LAWA;
+q) Stand-alone backyard gardening projects similar to BINHI.
+
+END OF LIST
+`;
+
 let i = 0;
 const speed = 25;
 
-const typingElement = document.getElementById("typing");
+function typeWriter(){
 
-function resetTyping(text) {
-    typingElement.innerHTML = "";
-    i = 0;
-    currentText = text;
-
-    function typeWriter() {
-        if (i < currentText.length) {
-            typingElement.innerHTML += currentText.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-        }
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
     }
 
-    typeWriter();
 }
 
-function showAnnex(type) {
-    if (type === 'annex10') {
-        resetTyping(annex10);
-    } else {
-        resetTyping(annex11);
-    }
-}
+typeWriter();
 
-resetTyping(annex11);
 </script>
 
 </body>
