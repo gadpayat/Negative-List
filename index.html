@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANNEX 11: NEGATIVE LIST</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Consolas, monospace;
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+    background:
+    linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.88)),
+    repeating-linear-gradient(
+        -45deg,
+        #111 0px,
+        #111 25px,
+        #4b0000 25px,
+        #4b0000 50px
+    );
+}
+
+/* Animated Background */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+    repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 100px,
+        rgba(255,0,0,.05) 100px,
+        rgba(255,0,0,.05) 120px
+    );
+    animation:scan 10s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes scan{
+    from{transform:translateX(0);}
+    to{transform:translateX(120px);}
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 30px;
+}
+
+.title{
+    text-align:center;
+    font-size:3rem;
+    color:#ff4d4d;
+    margin-bottom:20px;
+    text-shadow:0 0 20px red;
+    letter-spacing:3px;
+}
+
+.warning{
+    text-align:center;
+    font-size:1rem;
+    color:#ffcc00;
+    margin-bottom:25px;
+}
+
+.doc-btn{
+    display:block;
+    width:300px;
+    margin:20px auto 40px;
+    text-align:center;
+    text-decoration:none;
+    padding:15px;
+    border-radius:10px;
+    background:#ff0000;
+    color:white;
+    font-weight:bold;
+    font-size:1rem;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(255,0,0,.6);
+}
+
+.doc-btn:hover{
+    transform:scale(1.05);
+    background:#cc0000;
+}
+
+.content{
+    background:rgba(0,0,0,.75);
+    border:1px solid rgba(255,0,0,.4);
+    border-radius:15px;
+    padding:30px;
+    line-height:1.8;
+    font-size:15px;
+    white-space:pre-wrap;
+    min-height:300px;
+    box-shadow:0 0 25px rgba(255,0,0,.2);
+}
+
+.cursor{
+    display:inline-block;
+    width:10px;
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0;}
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#bbb;
+    font-size:13px;
+    margin-top:30px;
+}
+
+@media(max-width:768px){
+
+.title{
+    font-size:2rem;
+}
+
+.doc-btn{
+    width:90%;
+}
+
+.content{
+    font-size:14px;
+}
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="title">ANNEX 11: NEGATIVE LIST</h1>
+
+    <p class="warning">
+        Activities, expenditures, and sub-projects included in the Negative List are ineligible for funding under the Pagkilos Project.
+    </p>
+
+    <!-- INSERT DOCUMENT LINK BELOW -->
+    <a href="YOUR_DOCUMENT_LINK_HERE" target="_blank" class="doc-btn">
+        VIEW FULL DOCUMENT
+    </a>
+
+    <div class="content">
+        <span id="typing"></span><span class="cursor">|</span>
+    </div>
+
+</div>
+
+<footer>
+    PAGKILOS PROJECT • ANNEX 11 NEGATIVE LIST
+</footer>
+
+<script>
+
+const text = `
+
+ACTIVITIES, EXPENDITURES, AND SUB-PROJECTS INCLUDED IN THE NEGATIVE LIST ARE THOSE THAT POSE NEGATIVE ENVIRONMENTAL AND/OR SOCIAL IMPACTS AND ARE THEREFORE INELIGIBLE FOR FUNDING UNDER THE PAGKILOS PROJECT.
+
+═══════════════════════════════════════════════
+PROHIBITED ACTIVITIES
+═══════════════════════════════════════════════
+
+a) Activities that can cause any significant loss or degradation of critical natural habitats whether directly or indirectly;
+
+b) Activities that could adversely affect forest and forest health;
+
+c) Activities that could affect sites with archaeological, paleontological, historical, religious, or unique natural values;
+
+d) Use of goods and equipment on lands abandoned due to social tension/conflict, or the ownership of the land is disputed or cannot be ascertained;
+
+e) Use of goods and equipment to demolish or remove assets unless ownership can be ascertained and owners have concurred;
+
+f) Purchase or compensation for land;
+
+g) Activities resulting in adverse impacts on land and natural resources customarily used by Indigenous Peoples (IPs);
+
+h) Construction, improvement, rehabilitation, or repair of government offices and facilities except existing evacuation centers;
+
+i) Retrofitting of basic social services infrastructure except for climate resilience improvements;
+
+j) Construction, improvement, rehabilitation, or repair of places of worship and halls;
+
+k) Environmentally hazardous materials such as chainsaws, explosives, pesticides, herbicides, insecticides, asbestos, and other dangerous materials;
+
+l) Fishing boats beyond BFAR weight limits;
+
+m) Activities with alternative prior sources of committed funding;
+
+n) Fiesta and other religious or cultural activities;
+
+o) International travel;
+
+p) Activities employing children below 18 years old or involving harmful labor practices;
+
+q) Consumption items including food and basic necessities commonly included in relief packages;
+
+r) Maintenance and operation of infrastructure funded by KALAHI-CIDSS unless damaged by disaster;
+
+s) Production or trade of products deemed illegal under Philippine laws or international agreements;
+
+t) Production or trade in weapons and munitions including paramilitary materials;
+
+u) Commercial logging operations or purchase of logging equipment for primary tropical forests;
+
+v) Harmful marine and coastal fishing practices that damage biodiversity and habitats.
+
+═══════════════════════════════════════════════
+PROHIBITED INFRASTRUCTURES AND EXPENDITURES
+═══════════════════════════════════════════════
+
+a) Projects located in excluded areas under NCIP AO 3 Series of 2021 including:
+
+• Sacred grounds and burial sites of Indigenous Communities
+• International and local cultural heritage sites
+• Critical areas reserved by ICCs/IPs
+• Areas identified in ADSDPP
+
+b) Construction adjacent to cultural and heritage sites;
+
+c) Construction adjacent to critical ICC/IP areas;
+
+d) Communal and irrigation systems under National Irrigation Authority jurisdiction;
+
+e) Regulatory services including laboratories and laboratory equipment;
+
+f) Large production, post-harvest, and processing facilities;
+
+g) Large market-related infrastructures;
+
+h) Training centers including equipment;
+
+i) Multiple livestock types in one sub-project;
+
+j) Rehabilitation of fishponds without required buffer zones;
+
+k) Brackish water projects not observing required ecological buffer zones;
+
+l) Freshwater projects not observing required environmental setbacks;
+
+m) Advertisements, donations, promotional campaigns, and marketing strategies covered by Executive Order No. 51;
+
+n) Purchase of vehicles including ambulances, police cars, fire trucks, and rescue vehicles;
+
+o) Solar-powered street lights;
+
+p) Small water impounding projects similar to Project LAWA;
+
+q) Stand-alone backyard gardening projects similar to BINHI.
+
+END OF NEGATIVE LIST
+`;
+
+let i = 0;
+const speed = 8;
+
+function typeWriter(){
+
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+
+}
+
+typeWriter();
+
+</script>
+
+</body>
+</html>
