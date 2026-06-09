@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANNEX LIST TOGGLE</title>
+<title>ANNEX 11: NEGATIVE LIST</title>
 
 <style>
 
@@ -76,28 +76,25 @@ body::before{
     margin-bottom:25px;
 }
 
-/* TOGGLE BUTTONS */
-.toggle-buttons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin-bottom:20px;
-}
-
-.toggle-buttons button{
-    padding:10px 20px;
-    border:none;
-    cursor:pointer;
+.doc-btn{
+    display:block;
+    width:300px;
+    margin:20px auto 40px;
+    text-align:center;
+    text-decoration:none;
+    padding:15px;
+    border-radius:10px;
     background:#ff0000;
-    color:#fff;
+    color:white;
     font-weight:bold;
-    border-radius:8px;
+    font-size:1rem;
     transition:.3s;
+    box-shadow:0 0 20px rgba(255,0,0,.6);
 }
 
-.toggle-buttons button:hover{
-    background:#cc0000;
+.doc-btn:hover{
     transform:scale(1.05);
+    background:#cc0000;
 }
 
 .content{
@@ -136,35 +133,35 @@ footer{
     font-size:2rem;
 }
 
+.doc-btn{
+    width:90%;
+}
+
 .content{
     font-size:14px;
 }
-
 }
 
 </style>
 </head>
-
 <body>
 
 <div class="container">
 
-    <h1 class="title">ANNEX LIST</h1>
+    <h1 class="title">ANNEX 11: NEGATIVE LIST</h1>
 
     <p class="warning">
-        Environmental and social safeguard exclusion lists for project compliance.
+        Activities, expenditures, and sub-projects included in the Negative List are ineligible for funding under the KALAHI-CIDSS Program.
     </p>
 
-    <!-- TOGGLE BUTTONS -->
-    <div class="toggle-buttons">
-        <button onclick="showAnnex('annex10')">ANNEX 10</button>
-        <button onclick="showAnnex('annex11')">ANNEX 11</button>
-    </div>
-
-    <!-- CONTENT -->
+    <!-- INSERT DOCUMENT LINK BELOW -->
     <div class="content">
-        <span id="typing"></span><span class="cursor">|</span>
-    </div>
+    <span id="typing"></span><span class="cursor">|</span>
+</div>
+
+<a href="https://drive.google.com/file/d/1uoffAc3cfeRh9YdhuJeco_BDzmCZ7s_7/view" target="_blank" class="doc-btn">
+    VIEW IN PDF FILE
+</a>
 
 </div>
 
@@ -173,20 +170,19 @@ footer{
 </footer>
 
 <script>
-
 const annex10 = `ANNEX 10: ENVIRONMENTAL AND SOCIAL EXCLUSION LIST
 
 The following are ineligible sub-project activities and/or expenditure types:
 ● Any development project or activity in strict protection zone (SPZ) of a protected area
-● Projects classified as environmentally critical projects or PEISS Category A
-● Hazardous materials such as explosives, pesticides, asbestos, herbicides, insecticides
-● Construction or rehabilitation of dams affecting water systems
-● Activities affecting cultural heritage sites such as graves, churches, archaeological sites
-● Forced labor, child labor, or human trafficking activities
-● Activities that exploit women or men
-● Projects on disputed land ownership
+● Projects classified as “environmentally critical projects” or category A based on PEISS screening
+● Environmentally hazardous materials such as chainsaws, explosives, pesticides, herbicides, insecticides, asbestos and other potentially dangerous materials
+● Construction of any new dams or rehabilitation of existing dams including structural or operational changes
+● Any activity affecting physical cultural heritage such as graves, temples, churches, historical relics, archaeological sites
+● Activities involving forced labor, child labor exploitation, or human trafficking
+● Activities that unfairly exploit women or men at any age
+● Any activity on land with disputed ownership or tenure rights
 ● Stand-alone solar-powered street lights
-● Construction in sacred or ICC/IP protected areas
+● Construction in or adjacent to sacred, cultural, heritage, or ICC/IP areas
 
 END OF ANNEX 10`;
 
@@ -198,43 +194,45 @@ ACTIVITIES, EXPENDITURES, AND SUB-PROJECTS INCLUDED IN THE NEGATIVE LIST ARE THO
 PROHIBITED ACTIVITIES
 ═══════════════════════════════════════════════
 
-a) Activities that can cause significant environmental degradation;
-b) Activities affecting forests and natural ecosystems;
-c) Activities affecting cultural and historical sites;
-d) Use of goods on disputed land;
-e) Demolition without consent;
-f) Purchase of land;
-g) Impact on Indigenous Peoples’ resources;
-h) Government building construction (non-evacuation centers);
-i) Non-approved infrastructure retrofitting;
+a) Activities that can cause any significant loss or degradation of critical natural habitats whether directly or indirectly;
+b) Activities that could adversely affect forest and forest health;
+c) Activities that could affect sites with archaeological, historical, religious, or unique natural values;
+d) Use of goods and equipment on disputed lands;
+e) Demolition without verified ownership consent;
+f) Purchase or compensation for land;
+g) Activities affecting Indigenous Peoples’ resources;
+h) Government office construction (except evacuation centers);
+i) Non-climate resilient retrofitting exceptions only;
 j) Places of worship construction;
 k) Hazardous materials use;
-l) Fishing beyond limits;
-m) Double-funded projects;
-n) Cultural or fiesta events;
+l) Over-limit fishing boats;
+m) Double-funded activities;
+n) Fiesta/cultural events;
 o) International travel;
-p) Child labor exploitation;
+p) Child labor or harmful labor practices;
 q) Relief consumables;
-r) Infrastructure maintenance (unless disaster-related);
-s) Illegal trade activities;
-t) Weapons production;
+r) Maintenance of funded infrastructure unless disaster-related;
+s) Illegal goods or trade;
+t) Weapons and munitions;
 u) Logging in primary forests;
-v) Harmful marine practices;
+v) Harmful marine practices.
 
 END OF ANNEX 11`;
 
+let currentText = annex11; // default view
 let i = 0;
-const speed = 20;
+const speed = 25;
 
 const typingElement = document.getElementById("typing");
 
 function resetTyping(text) {
     typingElement.innerHTML = "";
     i = 0;
+    currentText = text;
 
     function typeWriter() {
-        if (i < text.length) {
-            typingElement.innerHTML += text.charAt(i);
+        if (i < currentText.length) {
+            typingElement.innerHTML += currentText.charAt(i);
             i++;
             setTimeout(typeWriter, speed);
         }
@@ -244,16 +242,15 @@ function resetTyping(text) {
 }
 
 function showAnnex(type) {
-    if (type === "annex10") {
+    if (type === 'annex10') {
         resetTyping(annex10);
     } else {
         resetTyping(annex11);
     }
 }
 
-// default load
+// load default
 resetTyping(annex11);
-
 </script>
 
 </body>
